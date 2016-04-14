@@ -221,4 +221,25 @@ class productosController extends Controller
             ->getForm()
         ;
     }
+      public function buscarProductoAction()
+    {
+        
+        return $this->render('ecopointBundle:productos:buscarProducto.html.twig');
+    }
+
+   public function responderProductoAction(Request $request)
+    {
+       //   $cod= $_POST['codigo']; // Coger variables usando php clásico.
+         $cod= $request->request->get('codigo'); // Modo symfony2
+         
+         $em = $this->getDoctrine()->getManager();
+
+        $entities = $em->getRepository('ecopointBundle:producto')->findByCodigo($cod);
+
+        return $this->render('ecopointBundle:producto:responderProducto.html.twig', array(
+            'entities' => $entities,
+            'codigo'=> $cod,
+        ));
+    }
+
 }

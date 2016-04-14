@@ -180,6 +180,22 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
             not_productos_delete:
 
+            // productos_buscar_producto
+            if ($pathinfo === '/productos/buscarproducto') {
+                return array (  '_controller' => 'Ecotronik\\Bundle\\EcopointBundle\\Controller\\productosController::buscarProductoAction',  '_route' => 'productos_buscar_producto',);
+            }
+
+            // productos_responder_producto
+            if ($pathinfo === '/productos/responderproducto') {
+                if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                    $allow = array_merge($allow, array('POST', 'PUT'));
+                    goto not_productos_responder_producto;
+                }
+
+                return array (  '_controller' => 'Ecotronik\\Bundle\\EcopointBundle\\Controller\\productosController::responderProductoAction',  '_route' => 'productos_responder_producto',);
+            }
+            not_productos_responder_producto:
+
         }
 
         // ecopoint_homepage

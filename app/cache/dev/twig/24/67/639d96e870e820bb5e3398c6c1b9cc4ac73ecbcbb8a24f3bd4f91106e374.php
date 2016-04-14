@@ -78,21 +78,22 @@ class __TwigTemplate_2467639d96e870e820bb5e3398c6c1b9cc4ac73ecbcbb8a24f3bd4f9110
             // line 29
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "capacidad"), "html", null, true);
             echo "</td>
-                <td>";
+                <td><img src=\"";
             // line 30
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "foto"), "html", null, true);
-            echo "</td>
+            echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl((("bundles/ecopoint/imagenes/" . $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "foto")) . "")), "html", null, true);
+            echo "\"/>
+                </td>
                 <td>
                 <ul>
                     <li>
                         <a href=\"";
-            // line 34
+            // line 35
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("productos_show", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id"))), "html", null, true);
             echo "\">show</a>
                     </li>
                     <li>
                         <a href=\"";
-            // line 37
+            // line 38
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("productos_edit", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id"))), "html", null, true);
             echo "\">edit</a>
                     </li>
@@ -104,14 +105,14 @@ class __TwigTemplate_2467639d96e870e820bb5e3398c6c1b9cc4ac73ecbcbb8a24f3bd4f9110
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 43
+        // line 44
         echo "        </tbody>
     </table>
 </div>
         <ul>
         <li>
             <a href=\"";
-        // line 48
+        // line 49
         echo $this->env->getExtension('routing')->getPath("productos_new");
         echo "\">
                 Create a new entry
@@ -133,6 +134,6 @@ class __TwigTemplate_2467639d96e870e820bb5e3398c6c1b9cc4ac73ecbcbb8a24f3bd4f9110
 
     public function getDebugInfo()
     {
-        return array (  115 => 48,  108 => 43,  96 => 37,  90 => 34,  83 => 30,  79 => 29,  75 => 28,  71 => 27,  65 => 26,  61 => 25,  57 => 24,  54 => 23,  50 => 22,  31 => 5,  28 => 4,);
+        return array (  116 => 49,  109 => 44,  97 => 38,  91 => 35,  83 => 30,  79 => 29,  75 => 28,  71 => 27,  65 => 26,  61 => 25,  57 => 24,  54 => 23,  50 => 22,  31 => 5,  28 => 4,);
     }
 }

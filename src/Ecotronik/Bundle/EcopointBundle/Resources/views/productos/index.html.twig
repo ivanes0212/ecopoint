@@ -27,7 +27,8 @@
                 <td>{{ entity.marca }}</td>
                 <td>{{ entity.material }}</td>
                 <td>{{ entity.capacidad }}</td>
-                <td>{{ entity.foto }}</td>
+                <td><img src="{{ asset('bundles/ecopoint/imagenes/'~ entity.foto  ~ '') }}"/>
+                </td>
                 <td>
                 <ul>
                     <li>

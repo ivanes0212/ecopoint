@@ -1,9 +1,10 @@
 {% extends 'ecopointBundle::layout.html.twig' %}
 
 {% block body -%}
-    <h1>productos</h1>
-
-    <table class="record_properties">
+    
+<h1>Producto con código de barras: {{codigo}} -></h1>
+    
+   <table class="record_properties">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -49,4 +50,8 @@
     </li>
     <li>{{ form(delete_form) }}</li>
 </ul>
+           
+   
+                
+
 {% endblock %}
