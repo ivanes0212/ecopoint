@@ -1,0 +1,7 @@
+ecopoint_productos:
+    resource: "@ecopointBundle/Resources/config/routing/productos.yml"
+    prefix:   /productos
+
+ecopoint_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: ecopointBundle:Default:index }

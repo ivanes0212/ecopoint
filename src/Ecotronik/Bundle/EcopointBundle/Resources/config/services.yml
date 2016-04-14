@@ -1,0 +1,4 @@
+services:
+#    ecopoint.example:
+#        class: Ecotronik\Bundle\EcopointBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,53 @@
+{% extends 'ecopointBundle::layout.html.twig' %}
+
+
+{% block body %}
+<div id="inicio">
+    <h1>Productos</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Codigo</th>
+                <th>Nombre</th>
+                <th>Marca</th>
+                <th>Material</th>
+                <th>Capacidad</th>
+                <th>Foto</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.id }}</td>
+                <td>{{ entity.codigo }}</td>
+                <td><a href="{{ path('productos_show', { 'id': entity.id }) }}">{{ entity.nombre }}</a></td>
+                <td>{{ entity.marca }}</td>
+                <td>{{ entity.material }}</td>
+                <td>{{ entity.capacidad }}</td>
+                <td>{{ entity.foto }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('productos_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('productos_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+        <ul>
+        <li>
+            <a href="{{ path('productos_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

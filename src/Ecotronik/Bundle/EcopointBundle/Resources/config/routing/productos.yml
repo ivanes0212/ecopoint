@@ -1,0 +1,30 @@
+productos:
+    path:     /
+    defaults: { _controller: "ecopointBundle:productos:index" }
+
+productos_show:
+    path:     /{id}/show
+    defaults: { _controller: "ecopointBundle:productos:show" }
+
+productos_new:
+    path:     /new
+    defaults: { _controller: "ecopointBundle:productos:new" }
+
+productos_create:
+    path:     /create
+    defaults: { _controller: "ecopointBundle:productos:create" }
+    requirements: { _method: post }
+
+productos_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ecopointBundle:productos:edit" }
+
+productos_update:
+    path:     /{id}/update
+    defaults: { _controller: "ecopointBundle:productos:update" }
+    requirements: { _method: post|put }
+
+productos_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ecopointBundle:productos:delete" }
+    requirements: { _method: post|delete }

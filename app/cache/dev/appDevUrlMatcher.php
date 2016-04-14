@@ -122,6 +122,71 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        if (0 === strpos($pathinfo, '/productos')) {
+            // productos
+            if (rtrim($pathinfo, '/') === '/productos') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'productos');
+                }
+
+                return array (  '_controller' => 'Ecotronik\\Bundle\\EcopointBundle\\Controller\\productosController::indexAction',  '_route' => 'productos',);
+            }
+
+            // productos_show
+            if (preg_match('#^/productos/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'productos_show')), array (  '_controller' => 'Ecotronik\\Bundle\\EcopointBundle\\Controller\\productosController::showAction',));
+            }
+
+            // productos_new
+            if ($pathinfo === '/productos/new') {
+                return array (  '_controller' => 'Ecotronik\\Bundle\\EcopointBundle\\Controller\\productosController::newAction',  '_route' => 'productos_new',);
+            }
+
+            // productos_create
+            if ($pathinfo === '/productos/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_productos_create;
+                }
+
+                return array (  '_controller' => 'Ecotronik\\Bundle\\EcopointBundle\\Controller\\productosController::createAction',  '_route' => 'productos_create',);
+            }
+            not_productos_create:
+
+            // productos_edit
+            if (preg_match('#^/productos/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'productos_edit')), array (  '_controller' => 'Ecotronik\\Bundle\\EcopointBundle\\Controller\\productosController::editAction',));
+            }
+
+            // productos_update
+            if (preg_match('#^/productos/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                    $allow = array_merge($allow, array('POST', 'PUT'));
+                    goto not_productos_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'productos_update')), array (  '_controller' => 'Ecotronik\\Bundle\\EcopointBundle\\Controller\\productosController::updateAction',));
+            }
+            not_productos_update:
+
+            // productos_delete
+            if (preg_match('#^/productos/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_productos_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'productos_delete')), array (  '_controller' => 'Ecotronik\\Bundle\\EcopointBundle\\Controller\\productosController::deleteAction',));
+            }
+            not_productos_delete:
+
+        }
+
+        // ecopoint_homepage
+        if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'ecopoint_homepage')), array (  '_controller' => 'Ecotronik\\Bundle\\EcopointBundle\\Controller\\DefaultController::indexAction',));
+        }
+
         // _welcome
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {

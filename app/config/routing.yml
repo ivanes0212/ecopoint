@@ -1,0 +1,4 @@
+ecopoint:
+    resource: "@ecopointBundle/Resources/config/routing.yml"
+    prefix:   /
+
