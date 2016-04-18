@@ -13,6 +13,12 @@
         <div id="cabecera">
             {% block cabecera %}
                 <h1><font color="#CBCBFD" size="30">ECOPOINT</font></h1>
+                <h3>
+                    <ul id="nav">
+        <li id="nav-1"><a href="{{ path('productos') }}">Productos</a></li>
+	<li id="nav-2"><a href="{{ path('productos_buscar_producto') }}">Buscar producto</a></li>
+	             </ul>
+                </h3>
                 
             {% endblock %}
         </div>

@@ -7,7 +7,7 @@ class __TwigTemplate_64376096ff68d41e7027bd970f702df44a8e094ffb8eb6593f8d7141f55
     {
         parent::__construct($env);
 
-        $this->parent = $this->env->loadTemplate("::base.html.twig");
+        $this->parent = $this->env->loadTemplate("ecopointBundle::layout.html.twig");
 
         $this->blocks = array(
             'body' => array($this, 'block_body'),
@@ -16,7 +16,7 @@ class __TwigTemplate_64376096ff68d41e7027bd970f702df44a8e094ffb8eb6593f8d7141f55
 
     protected function doGetParent(array $context)
     {
-        return "::base.html.twig";
+        return "ecopointBundle::layout.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())

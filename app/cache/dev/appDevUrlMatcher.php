@@ -124,11 +124,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         if (0 === strpos($pathinfo, '/productos')) {
             // productos
-            if (rtrim($pathinfo, '/') === '/productos') {
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'productos');
-                }
-
+            if ($pathinfo === '/productos/productos') {
                 return array (  '_controller' => 'Ecotronik\\Bundle\\EcopointBundle\\Controller\\productosController::indexAction',  '_route' => 'productos',);
             }
 
@@ -181,7 +177,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             not_productos_delete:
 
             // productos_buscar_producto
-            if ($pathinfo === '/productos/buscarproducto') {
+            if (rtrim($pathinfo, '/') === '/productos') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'productos_buscar_producto');
+                }
+
                 return array (  '_controller' => 'Ecotronik\\Bundle\\EcopointBundle\\Controller\\productosController::buscarProductoAction',  '_route' => 'productos_buscar_producto',);
             }
 

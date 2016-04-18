@@ -1,5 +1,5 @@
 productos:
-    path:     /
+    path:     /productos
     defaults: { _controller: "ecopointBundle:productos:index" }
 
 productos_show:
@@ -30,7 +30,7 @@ productos_delete:
     requirements: { _method: post|delete }
     
 productos_buscar_producto:
-    path:     /buscarproducto
+    path:     /
     defaults: { _controller: "ecopointBundle:productos:buscarProducto" }
 
 productos_responder_producto:

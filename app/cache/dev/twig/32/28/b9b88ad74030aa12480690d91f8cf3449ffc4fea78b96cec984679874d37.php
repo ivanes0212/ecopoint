@@ -28,12 +28,12 @@ class __TwigTemplate_3228b9b88ad74030aa12480690d91f8cf3449ffc4fea78b96cec9846798
     public function block_body($context, array $blocks = array())
     {
         // line 4
-        echo "<br>Buscar un producto:
+        echo "<br>Buscar un producto por código de barras:
 <form action=\"";
         // line 5
         echo $this->env->getExtension('routing')->getPath("productos_responder_producto");
         echo "\" method=\"POST\">
-    <input type=\"text\" name=\"codigo\" value=\"Codigo de barras del producto\">
+    <input type=\"text\" name=\"codigo\" value=\"\">
     <input type=\"submit\" value=\"OK\">
 </form>
 ";

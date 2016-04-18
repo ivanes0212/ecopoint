@@ -44,21 +44,21 @@ class __TwigTemplate_4cb7fb6834c84ef8425b683b43f638ac947a991e6100dc27bd9b839d8ff
             ";
         // line 14
         $this->displayBlock('cabecera', $context, $blocks);
-        // line 18
+        // line 24
         echo "        </div>
        
          <div id=\"cuerpo\">
             ";
-        // line 21
+        // line 27
         $this->displayBlock('body', $context, $blocks);
-        // line 22
+        // line 28
         echo "        </div>
         
          <div id=\"pie\">
             ";
-        // line 25
+        // line 31
         $this->displayBlock('pie', $context, $blocks);
-        // line 34
+        // line 40
         echo "        </div>
 </html>
 ";
@@ -85,19 +85,31 @@ class __TwigTemplate_4cb7fb6834c84ef8425b683b43f638ac947a991e6100dc27bd9b839d8ff
     {
         // line 15
         echo "                <h1><font color=\"#CBCBFD\" size=\"30\">ECOPOINT</font></h1>
+                <h3>
+                    <ul id=\"nav\">
+        <li id=\"nav-1\"><a href=\"";
+        // line 18
+        echo $this->env->getExtension('routing')->getPath("productos");
+        echo "\">Productos</a></li>
+\t<li id=\"nav-2\"><a href=\"";
+        // line 19
+        echo $this->env->getExtension('routing')->getPath("productos_buscar_producto");
+        echo "\">Buscar producto</a></li>
+\t             </ul>
+                </h3>
                 
             ";
     }
 
-    // line 21
+    // line 27
     public function block_body($context, array $blocks = array())
     {
     }
 
-    // line 25
+    // line 31
     public function block_pie($context, array $blocks = array())
     {
-        // line 26
+        // line 32
         echo "                <h6><font color=\"#CBCBFD\">
                     CONTACTO -> ivanesfc@hotmail.com
                     <br>
@@ -120,6 +132,6 @@ class __TwigTemplate_4cb7fb6834c84ef8425b683b43f638ac947a991e6100dc27bd9b839d8ff
 
     public function getDebugInfo()
     {
-        return array (  101 => 26,  98 => 25,  93 => 21,  87 => 15,  84 => 14,  77 => 7,  74 => 6,  68 => 5,  62 => 34,  60 => 25,  55 => 22,  53 => 21,  48 => 18,  46 => 14,  39 => 10,  36 => 9,  34 => 6,  30 => 5,  24 => 1,);
+        return array (  113 => 32,  110 => 31,  105 => 27,  96 => 19,  92 => 18,  87 => 15,  84 => 14,  77 => 7,  74 => 6,  68 => 5,  62 => 40,  60 => 31,  55 => 28,  53 => 27,  48 => 24,  46 => 14,  39 => 10,  36 => 9,  34 => 6,  30 => 5,  24 => 1,);
     }
 }

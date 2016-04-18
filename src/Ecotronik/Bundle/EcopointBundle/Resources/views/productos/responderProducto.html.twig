@@ -2,23 +2,24 @@
 
 {% block body -%}
     
-<h1>Producto con código de barras: {{codigo}} -></h1>
-    
-   <table class="record_properties">
+<h1>Producto con código de barras "{{codigo}}":</h1>
+<div id="texto"> 
+   <table>
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ entity.id }}</td>
-            </tr>
-            <tr>
-                <th>Codigo</th>
-                <td>{{ entity.codigo }}</td>
-            </tr>
-            <tr>
+        
+            {% for entity in prod %}
+            
+          <center>  
+        <h2><a href="{{ path('productos_show', { 'id': entity.id }) }}">{{ entity.nombre }}</a></h2>
+
+        <img src="{{ asset('bundles/ecopoint/imagenes/'~ entity.foto  ~ '') }}"/>
+                
+        
+                <tr>
                 <th>Nombre</th>
                 <td>{{ entity.nombre }}</td>
-            </tr>
-            <tr>
+                </tr>
+                <tr>
                 <th>Marca</th>
                 <td>{{ entity.marca }}</td>
             </tr>
@@ -31,24 +32,17 @@
                 <td>{{ entity.capacidad }}</td>
             </tr>
             <tr>
-                <th>Foto</th>
-                <td>{{ entity.foto }}</td>
-            </tr>
+          </center>
+        {% endfor %}
         </tbody>
     </table>
-
+</div>
         <ul class="record_actions">
     <li>
         <a href="{{ path('productos') }}">
             Back to the list
         </a>
     </li>
-    <li>
-        <a href="{{ path('productos_edit', { 'id': entity.id }) }}">
-            Edit
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
 </ul>
            
    

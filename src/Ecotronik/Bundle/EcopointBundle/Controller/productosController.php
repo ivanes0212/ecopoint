@@ -234,10 +234,10 @@ class productosController extends Controller
          
          $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('ecopointBundle:producto')->findByCodigo($cod);
+        $entities = $em->getRepository('ecopointBundle:productos')->findByCodigo($cod);
 
-        return $this->render('ecopointBundle:producto:responderProducto.html.twig', array(
-            'entities' => $entities,
+        return $this->render('ecopointBundle:productos:responderProducto.html.twig', array(
+            'prod' => $entities,
             'codigo'=> $cod,
         ));
     }

@@ -1,9 +1,9 @@
 {% extends 'ecopointBundle::layout.html.twig' %}
 
 {% block body -%}
-    <br>Buscar un producto:
+    <br>Buscar un producto por código de barras:
 <form action="{{path('productos_responder_producto')}}" method="POST">
-    <input type="text" name="codigo" value="Codigo de barras del producto">
+    <input type="text" name="codigo" value="">
     <input type="submit" value="OK">
 </form>
 {% endblock %}
