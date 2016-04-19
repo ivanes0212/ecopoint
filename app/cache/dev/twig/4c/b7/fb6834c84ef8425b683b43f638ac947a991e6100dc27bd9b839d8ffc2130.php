@@ -44,21 +44,21 @@ class __TwigTemplate_4cb7fb6834c84ef8425b683b43f638ac947a991e6100dc27bd9b839d8ff
             ";
         // line 14
         $this->displayBlock('cabecera', $context, $blocks);
-        // line 24
+        // line 25
         echo "        </div>
        
          <div id=\"cuerpo\">
             ";
-        // line 27
-        $this->displayBlock('body', $context, $blocks);
         // line 28
+        $this->displayBlock('body', $context, $blocks);
+        // line 29
         echo "        </div>
         
          <div id=\"pie\">
             ";
-        // line 31
+        // line 32
         $this->displayBlock('pie', $context, $blocks);
-        // line 40
+        // line 39
         echo "        </div>
 </html>
 ";
@@ -95,27 +95,29 @@ class __TwigTemplate_4cb7fb6834c84ef8425b683b43f638ac947a991e6100dc27bd9b839d8ff
         // line 19
         echo $this->env->getExtension('routing')->getPath("productos_buscar_producto");
         echo "\">Buscar producto</a></li>
+        <li id=\"nav-3\"><a href=\"";
+        // line 20
+        echo $this->env->getExtension('routing')->getPath("productos_new");
+        echo "\">Ingresar nuevo producto</a></li>
 \t             </ul>
                 </h3>
                 
             ";
     }
 
-    // line 27
+    // line 28
     public function block_body($context, array $blocks = array())
     {
     }
 
-    // line 31
+    // line 32
     public function block_pie($context, array $blocks = array())
     {
-        // line 32
+        // line 33
         echo "                <h6><font color=\"#CBCBFD\">
-                    CONTACTO -> ivanesfc@hotmail.com
+                    CONTACTO -> ecopoint@hotmail.com
                     <br>
-                    SITIO WEB -> juegos.com
-                    <br>
-                    CENTRO -> uni Eibar-Ermua
+                    SITIO WEB -> ecopoint.com
                     </font></h6>
             ";
     }
@@ -132,6 +134,6 @@ class __TwigTemplate_4cb7fb6834c84ef8425b683b43f638ac947a991e6100dc27bd9b839d8ff
 
     public function getDebugInfo()
     {
-        return array (  113 => 32,  110 => 31,  105 => 27,  96 => 19,  92 => 18,  87 => 15,  84 => 14,  77 => 7,  74 => 6,  68 => 5,  62 => 40,  60 => 31,  55 => 28,  53 => 27,  48 => 24,  46 => 14,  39 => 10,  36 => 9,  34 => 6,  30 => 5,  24 => 1,);
+        return array (  117 => 33,  114 => 32,  109 => 28,  100 => 20,  96 => 19,  92 => 18,  87 => 15,  84 => 14,  77 => 7,  74 => 6,  68 => 5,  62 => 39,  60 => 32,  55 => 29,  53 => 28,  48 => 25,  46 => 14,  39 => 10,  36 => 9,  34 => 6,  30 => 5,  24 => 1,);
     }
 }
