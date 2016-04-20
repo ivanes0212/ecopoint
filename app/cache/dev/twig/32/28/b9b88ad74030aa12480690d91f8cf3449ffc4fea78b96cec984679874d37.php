@@ -38,6 +38,11 @@ class __TwigTemplate_3228b9b88ad74030aa12480690d91f8cf3449ffc4fea78b96cec9846798
     <input type=\"text\" name=\"codigo\" value=\"\">
     <input type=\"submit\" value=\"OK\">
 </form>
+    <br>
+    <img src=\"";
+        // line 12
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ecopoint/imagenes/barras.jpg"), "html", null, true);
+        echo "\"width=30% height=30%/>
         </center>
     </div>
 ";
@@ -55,6 +60,6 @@ class __TwigTemplate_3228b9b88ad74030aa12480690d91f8cf3449ffc4fea78b96cec9846798
 
     public function getDebugInfo()
     {
-        return array (  36 => 7,  31 => 4,  28 => 3,);
+        return array (  44 => 12,  36 => 7,  31 => 4,  28 => 3,);
     }
 }
