@@ -1,0 +1,64 @@
+{% extends 'ecopointBundle::layout.html.twig' %}
+
+
+{% block body %}
+<div id="plat">
+    <h1>Productos</h1>
+
+    <table>
+        
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Código de barras</th>
+                <td>{{ entity.codigo }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td><a href="{{ path('productos_show', { 'id': entity.id }) }}">{{ entity.nombre }}</a></td>
+            </tr>
+            <tr>
+                <th>Marca</th>
+                <td>{{ entity.marca }}</td>
+                </tr>
+            <tr>
+                <th>Material</th>
+                <td>{{ entity.material }}</td>
+                </tr>
+            <tr>
+                <th>Capacidad</th>
+                <td>{{ entity.capacidad }}</td>
+                </tr>
+            <tr>
+                <th>Foto</th>
+                <td><img src="{{ asset('bundles/ecopoint/imagenes/'~ entity.foto  ~ '') }}"width=100px height=100px/>
+                </td>
+                </tr>
+            <tr>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('productos_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('productos_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+        <ul>
+        <li>
+            <a href="{{ path('productos_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

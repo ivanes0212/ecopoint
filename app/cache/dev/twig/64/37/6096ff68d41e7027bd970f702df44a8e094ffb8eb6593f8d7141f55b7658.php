@@ -28,7 +28,7 @@ class __TwigTemplate_64376096ff68d41e7027bd970f702df44a8e094ffb8eb6593f8d7141f55
     public function block_body($context, array $blocks = array())
     {
         // line 4
-        echo "<h1>productos</h1>
+        echo "<h1>Ficha técnica del producto</h1>
 
     <table class=\"record_properties\">
         <tbody>

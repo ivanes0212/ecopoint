@@ -3,13 +3,15 @@
 {% block body -%}
     <div id="texto">
         <center>
-    <br>Buscar un producto por código de barras:
+            <br>Buscar un producto por código de barras:<br>
 <form action="{{path('productos_responder_producto')}}" method="POST">
     <input type="text" name="codigo" value="">
     <input type="submit" value="OK">
 </form>
     <br>
-    <img src="{{ asset('bundles/ecopoint/imagenes/barras.jpg')}}"width=30% height=30%/>
+        <img src="{{ asset('bundles/ecopoint/imagenes/barras.jpg')}}"width=10% height=10%/>
+        <br>
+        <br>
         </center>
     </div>
 {% endblock %}

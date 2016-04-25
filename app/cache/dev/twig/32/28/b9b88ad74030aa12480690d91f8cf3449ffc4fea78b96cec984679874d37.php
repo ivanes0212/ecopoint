@@ -30,7 +30,7 @@ class __TwigTemplate_3228b9b88ad74030aa12480690d91f8cf3449ffc4fea78b96cec9846798
         // line 4
         echo "<div id=\"texto\">
         <center>
-    <br>Buscar un producto por código de barras:
+            <br>Buscar un producto por código de barras:<br>
 <form action=\"";
         // line 7
         echo $this->env->getExtension('routing')->getPath("productos_responder_producto");
@@ -39,10 +39,12 @@ class __TwigTemplate_3228b9b88ad74030aa12480690d91f8cf3449ffc4fea78b96cec9846798
     <input type=\"submit\" value=\"OK\">
 </form>
     <br>
-    <img src=\"";
+        <img src=\"";
         // line 12
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/ecopoint/imagenes/barras.jpg"), "html", null, true);
-        echo "\"width=30% height=30%/>
+        echo "\"width=10% height=10%/>
+        <br>
+        <br>
         </center>
     </div>
 ";

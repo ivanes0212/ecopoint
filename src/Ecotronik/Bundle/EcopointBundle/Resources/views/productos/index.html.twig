@@ -2,12 +2,12 @@
 
 
 {% block body %}
-<div id="inicio">
-    <h1>Productos</h1>
+<div id="texto">
+    <center><h1>Productos</h1></center>
 
     <table class="records_list">
         <thead>
-            <tr>
+            <tr align="justify">
                 <th>Id</th>
                 <th>Codigo</th>
                 <th>Nombre</th>
@@ -15,19 +15,20 @@
                 <th>Material</th>
                 <th>Capacidad</th>
                 <th>Foto</th>
-                <th>Actions</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
         {% for entity in entities %}
-            <tr>
-                <td>{{ entity.id }}</td>
-                <td>{{ entity.codigo }}</td>
-                <td><a href="{{ path('productos_show', { 'id': entity.id }) }}">{{ entity.nombre }}</a></td>
-                <td>{{ entity.marca }}</td>
-                <td>{{ entity.material }}</td>
-                <td>{{ entity.capacidad }}</td>
-                <td><img src="{{ asset('bundles/ecopoint/imagenes/'~ entity.foto  ~ '') }}"/>
+        <justify>
+            <tr align="justify">
+                <td><h3>{{ entity.id }}</h3></td>
+                <td><h6>{{ entity.codigo }}</h6></td>
+                <td><h4><a href="{{ path('productos_show', { 'id': entity.id }) }}">{{ entity.nombre }}</a></h4></td>
+                <td><h5>{{ entity.marca }}</h5></td>
+                <td><h5>{{ entity.material }}</h5></td>
+                <td><h5>{{ entity.capacidad }}</h5></td>
+                <td><img src="{{ asset('bundles/ecopoint/imagenes/'~ entity.foto  ~ '') }}"width=100px height=100px/>
                 </td>
                 <td>
                 <ul>
@@ -40,6 +41,7 @@
                 </ul>
                 </td>
             </tr>
+            </justify>
         {% endfor %}
         </tbody>
     </table>
