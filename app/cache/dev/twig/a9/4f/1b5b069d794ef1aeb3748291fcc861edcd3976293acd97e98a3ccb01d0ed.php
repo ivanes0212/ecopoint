@@ -27,8 +27,9 @@ class __TwigTemplate_a94f1b5b069d794ef1aeb3748291fcc861edcd3976293acd97e98a3ccb0
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        // line 5
-        echo "<h1>Datos del producto</h1>
+        // line 4
+        echo "<div id=\"plat\">
+        <center><h1>Datos del producto</h1></center>
 
     ";
         // line 7
@@ -37,11 +38,11 @@ class __TwigTemplate_a94f1b5b069d794ef1aeb3748291fcc861edcd3976293acd97e98a3ccb0
 
         <ul class=\"record_actions\">
     <li>
-        <a href=\"";
+    <a href=\"";
         // line 11
         echo $this->env->getExtension('routing')->getPath("productos");
         echo "\">
-            Back to the list
+        Volver a la lista de productos
         </a>
     </li>
 </ul>
@@ -61,6 +62,6 @@ class __TwigTemplate_a94f1b5b069d794ef1aeb3748291fcc861edcd3976293acd97e98a3ccb0
 
     public function getDebugInfo()
     {
-        return array (  42 => 11,  35 => 7,  31 => 5,  28 => 3,);
+        return array (  43 => 11,  36 => 7,  31 => 4,  28 => 3,);
     }
 }

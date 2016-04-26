@@ -1,15 +1,15 @@
 {% extends 'ecopointBundle::layout.html.twig' %}
 
 {% block body -%}
-    
-    <h1>Datos del producto</h1>
+    <div id="plat">
+        <center><h1>Datos del producto</h1></center>
 
     {{ form(form) }}
 
         <ul class="record_actions">
     <li>
-        <a href="{{ path('productos') }}">
-            Back to the list
+    <a href="{{ path('productos') }}">
+        Volver a la lista de productos
         </a>
     </li>
 </ul>
